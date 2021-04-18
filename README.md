@@ -1,9 +1,9 @@
 <div align="center">
-<img src="https://i.imgur.com/zDUWhHv.png" ></img>
+<img src="https://i.imgur.com/4DZhFR2.png" ></img>
 </div>
 <div align="center">
 	<p>
-		Simple and highly customizable <b>AdMob Native Ads</b> for react native!
+    A simple and robust library for creating & displaying <a href="https://developers.google.com/admob/android/native/start">Admob Native Advanced Ads</a> in your React Native App using Native Views.
 	</p>
 <div
 align="center"
@@ -28,317 +28,61 @@ target="_blank"
 <img  src="https://img.shields.io/npm/dt/react-native-admob-native-ads?color=green"/>
 </a> 
 </div>
-</div
-<p>
-While you might have seen native ads on a react-native application, I have tried to take everything to another level so its really really really easy for you guys to get native ads up and running in a few steps with <b>with styling support</b>
-</p>
-
-### iOS
-
-<img
-src="https://i.imgur.com/DOaoU1t.png"
-/>
-<img
-src="https://i.imgur.com/yX5GKhN.png"
-/>
-
-### Android
-
-<img
- width="300"
-src="https://i.imgur.com/sEKEoma.png"
-/>
-<img
-  width="300"
-src="https://i.imgur.com/OVmEZzi.png"
-/>
-<img
-  width="300"
-src="https://i.imgur.com/SiY3JeN.png"
-/>
-
-<div align="center">
-<h2> 💫 Features</h2>
 </div>
-<p align="center">
 
-1.  Native Admob Ads
+If you are working on a React Native Application, you might feel limited when it comes to displaying ads that look beautiful and match your app's look and feel. Usually when you show ads in your app, they are loaded inside a WebView and that is why you cannot modify them except changing the width and height in some cases.
+
+## How is this library different?
+
+We on the other hand do not load ads in a WebView. We use a more complex, Native Advanced ad format to display ads. We request Admob servers to send us the ad information such as images, headlines, videos etc. Then we send this information over the bridge to React Native and render it in React Native's View and Text components execpt a few exceptions where we use our own custom components.
+
+## Can I design the ads myself?
+
+Yes absolutely you can! There are no limiations. You can design ads that look just like your App's design and colors.
+
+## Features
+
+1.  [Admob Native Advanced Ads](https://developers.google.com/admob/android/native/start) format
 2.  Cross Platform (iOS and Android)
-3.  Identical Working on Android and iOS
-4.  Style your ads as you wish!
-5.  No need to manage .xml or .xib layout files to match ad style to app theme!
-6.  Adding styles is as simple as adding styles to any other react-native `View`
-7.  AutoRefresh ad
-8.  Multiple Ad Sizes
-9.  Support Video Ads & Image Ads!
+3.  Identical Working on both platforms
+4.  You can create your ads from ground up as you desire, **no limits.**
+5.  No need to manage any .xml or .xib layout files!
+6.  AutoRefresh ad at specific intervals
+7.  **Support for Video Ads**
+8.  Ad Mediation (**Especially Facebook Ads Mediation(Video & Banners)**)
+9.  Ad Targeting
+10. Typescript definations
 
-</p>
+## Installation
+- [Installation Guide](https://ammarahm-ed.github.io/react-native-admob-native-ads/docs/installation-3)
 
-<div align="center">
-<h2>🚀 Try out the example app!</h2>
-</div>
-To run the example app clone the project
+## Links
+- [Documentation](https://ammarahm-ed.github.io/react-native-admob-native-ads/docs/introduction/)
 
-    git clone https://github.com/ammarahm-ed/react-native-admob-native-ads.git
+## Old documentation
+If you are looking for the documentation for version `0.3.9` and below, head [here](https://github.com/ammarahm-ed/react-native-admob-native-ads/tree/v0.3.9)
 
-then run `yarn or npm install` in the example folder and finally to run the example app:
+## Sponsor this project
 
-    react-native run-android
+It costs me alot of time to keep the library updated and address all the bugs & issues. If this library has helped you [support me on patreon](https://www.patreon.com/streetwriters).
 
-<div align="center">
-<h2> 😋 Installation Guide </h2>
-</div>
+## Contact & support
 
-    npm install react-native-actions-sheet --save
+- Add a ⭐️ [star on GitHub](https://github.com/ammarahm-ed/react-native-admob-native-ads) to support the project!
+- Create a GitHub issue for bug reports, feature requests, or questions
+- Follow [@ammarahm-ed](https://github.com/ammarahm-ed) for announcements
 
-or if you use yarn:
+## Contribute
 
-    yarn add react-native-actions-sheet
+That is awesome news! There is alot happening at a very fast pace in this library right now. Every little help is precious. You can contribute in many ways:
 
-### iOS
+- Suggest code improvements on native iOS and Android
+- If you have suggestion or idea you want to discuss, open an issue.
+- [Open an issue](https://github.com/ammarahm-ed/react-native-admob-native-ads/issues/) if you want to make a pull request, and tell me what you want to improve or add so we can discuss
+- I am always open to new ideas
 
-**Step 1:** Follow the guide to add [Google Mobile Ads SDK](https://developers.google.com/admob/ios/quick-start#import_the_mobile_ads_sdk) to your Xcode project. Also don't forget to update your info.plist file also to add AppID.
+## License
 
-**Step 2:** Add .xib files to your main project:
+This library is licensed under the [MIT license](https://github.com/ammarahm-ed/react-native-admob-native-ads/blob/master/LICENSE).
 
-1.  Open **`.xcworkspace`** file inside the `ios` folder in your
-    project in Xcode.
- 2. Select the root folder of your project and right click for the dropdown menu.
- 3. Click on **`Add files to YOUR_PROJECT_NAME`**
- 4. In select file window, go to **`YOUR_PROJECT/node_modules/react-native-admob-native-ads/ios`**
- 5. Select **`GADTMediumTemplateView.xib`** and **`GADTSmallTemplateView.xib`** files and add them to your project. **Make sure copy items if needed is checked and add groups is selected!**
- 
- <img
-  width="300"
-src="https://i.imgur.com/mhkKEpE.png"
-/>
-   
-### [](https://github.com/sbugert/react-native-admob#android)Android
-
-Add your AdMob App ID to `AndroidManifest.xml`, as described in the  [Google Mobile Ads SDK documentation](https://developers.google.com/admob/android/quick-start#update_your_androidmanifestxml).
-
-### [](https://github.com/sbugert/react-native-admob#android)Android
-
-Add your AdMob App ID to `AndroidManifest.xml`, as described in the [Google Mobile Ads SDK documentation](https://developers.google.com/admob/android/quick-start#update_your_androidmanifestxml).
-
-<div align="center">
-<h2>Usage Example</h2>
-</div>
-For complete usage, see the example project.
-
-```jsx
-import React from "react";
-import { View } from "react-native";
-import NativeAdView from "react-native-admob-native-ads";
-
-const App = () => {
-  return (
-    <>
-      <View
-        style={{
-          justifyContent: "center",
-          flex: 1,
-          paddingHorizontal: 10,
-          alignItems: "center"
-        }}
-      >
-        <NativeAdView
-          adSize="large"
-          buttonStyle={{
-            borderRadius: 5,
-            textColor: "#008BBA", // ALL Colors must always be 6 digit Hex
-            backgroundColor: "#ffffff",
-            borderWidth: 2,
-            borderColor: "#008BBA"
-          }}
-          headlineTextColor="#000000"
-          descriptionTextColor="#a9a9a9"
-          advertiserTextColor="#a9a9a9"
-          backgroundStyle={{
-            borderWidth: 2,
-            borderRadius: 10,
-            borderColor: "#008BBA",
-            backgroundColor: "#ffffff"
-          }}
-          style={{
-            width: "100%"
-          }}
-          adUnitID="YOUR_NATIVE_AD_ID"
-        />
-      </View>
-    </>
-  );
-};
-
-export default App;
-```
-
-<div align="center">
-<h1>📃 Reference</h1>
-</div>
-
-## Props
-
-#### `adUnitID`
-
-Set Ad Unit ID for Native Advanced Ads that you created on your AdMob account.
-
-| Type     | Required | Platform |
-| -------- | -------- | -------- |
-| `string` | Yes      | All      |
-
-#
-
-#### `adSize`
-
-Select which size of ad you want to display.
-
-| Type     | Required | Default | Platform |
-| -------- | -------- | ------- | -------- |
-| `string` | no       | "small" | All      |
-
-**Android adSizes:** "small", "medium" , "large"
-**iOS adSizes:** "small" and "medium" only.
-
-#
-
-#### `testDevices`
-
-Set testDevices during testing ads or during development.
-
-| Type            | Required | Platform |
-| --------------- | -------- | -------- |
-| `Array<string>` | no       | All      |
-
-#
-
-#### `buttonStyle`
-
-style the callToAction button in Native ad according to your app look and feel.
-
-| Type     | Required | Platform |
-| -------- | -------- | -------- |
-| `object` | no       | All      |
-
-The following styles properties are available at the moment.
-
-| Name             | Type                          | Required |
-| ---------------- | ----------------------------- | -------- |
-| `backroundColor` | 6 digit hex color string only | Yes      |
-| `textColor`      | 6 digit hex color string only | Yes      |
-| `borderColor`    | 6 digit hex color string only | Yes      |
-| `borderWidth`    | number                        | Yes      |
-| `borderRadius`   | number                        | Yes      |
-
-**Note:** Currently you will need to set all available properties and give them a valid value. **value can't be null**
-
-#
-
-#### `backgroundStyle`
-
-Style the background of Native Ad View.
-
-| Type     | Required | Platform |
-| -------- | -------- | -------- |
-| `object` | no       | All      |
-
-The following styles properties are available at the moment.
-
-| Name             | Type                          | Required |
-| ---------------- | ----------------------------- | -------- |
-| `backroundColor` | 6 digit hex color string only | Yes      |
-| `borderColor`    | 6 digit hex color string only | Yes      |
-| `borderWidth`    | number                        | Yes      |
-| `borderRadius`   | number                        | Yes      |
-
-**Note:** Currently you will need to set all available properties and give them a valid value. **value can't be null**
-
-#
-
-#### `headlineTextColor`
-
-Set color for the heading text of Ad.
-
-| Type                          | Required | Platform |
-| ----------------------------- | -------- | -------- |
-| 6 digit hex color string only | no       | All      |
-
-#
-
-#### `descriptionTextColor`
-
-Set color for the description text of Ad.
-
-| Type                          | Required | Platform |
-| ----------------------------- | -------- | -------- |
-| 6 digit hex color string only | no       | All      |
-
-#
-
-#### `advertiserTextColor`
-
-Set color for the description text of Ad.
-
-| Type                          | Required | Platform |
-| ----------------------------- | -------- | -------- |
-| 6 digit hex color string only | no       | All      |
-
-#
-
-#### `ratingBarColor`
-
-Set color for the description text of Ad.
-
-| Type                          | Required | Platform     |
-| ----------------------------- | -------- | ------------ |
-| 6 digit hex color string only | no       | Android Only |
-
-#
-
-## Events
-
-All events are available through props.The following event are available on both Android and iOS:
-
-#### `onAdFailedToLoad`
-
-Called when ad has failed to load and returns reason due to which ad was not loaded.
-
-#### `onAdLoaded`
-
-Called when ad has successfully loaded without any errors.
-
-#### `onAdOpened`
-
-Called when ad is opened.
-
-#### `onAdClosed`
-
-Called when ad is closed.
-
-#### `onAdLeftApplication`
-
-Called when ad is loaded but user has left the application
-
-#### `onAdImpression`
-
-User impression has been recorded
-
-#### `onAdClicked`
-
-User has clicked on the ad.
-
-#
-
-## Contributing
-There are multiple ways in which you can contribute to this library. Feel free to open an issue if you have an idea in mind or if you have found a bug.
-
-If the templates do not suit your requirments and you decide to make your own templates, feel free to submit them here and I will add them in the library.
-
-
- 
-
-## Find this library useful? ❤️
-
-Support it by joining **stargazers** for this repository. ⭐️ and follow me for my next creations!
-
-### MIT Licensed
+Copyright © Ammar Ahmed ([@ammarahm-ed](https://github.com/ammarahm-ed))

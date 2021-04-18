@@ -1,53 +1,190 @@
-import React from 'react';
-import {View} from 'react-native';
-import NativeAdView from 'react-native-admob-native-ads';
+import React, {useState} from 'react';
+import {
+  Image,
+  SafeAreaView,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import {AdView} from './src/AdView';
+import List from './src/List';
+import {routes} from './src/utils';
 
 const App = () => {
-  const _onAdFailedToLoad = event => {
-    console.log(event);
-  };
-
-  const _onAdLoaded = () => {
-    console.log('Ad has loaded');
-  };
+  const [currentRoute, setCurrentRoute] = useState(null);
 
   return (
-    <>
+    <SafeAreaView
+      style={{
+        height: '100%',
+        width: '100%',
+      }}>
       <View
         style={{
-          justifyContent: 'center',
-          flex: 1,
-          paddingHorizontal: 10,
+          flexDirection: 'row',
           alignItems: 'center',
+          height: 50,
+          paddingHorizontal: 12,
+          marginBottom: 10,
         }}>
-
-        <NativeAdView
-          adSize="large" // Change to small or medium.
-          onAdLoaded={_onAdLoaded}
-          onAdFailedToLoad={_onAdFailedToLoad}
-          buttonStyle={{
-            borderRadius:5,
-            textColor:'#008BBA',
-            backgroundColor:'#ffffff',
-            borderWidth:2,
-            borderColor:'#008BBA',
-          }}
-          headlineTextColor="#000000"
-          descriptionTextColor="#a9a9a9"
-          advertiserTextColor="#a9a9a9"
-          backgroundStyle={{
-            borderWidth:2,
-            borderRadius:10,
-            borderColor:"#008BBA",
-            backgroundColor:"#ffffff"
-          }}
-          style={{
-            width: '100%',
-          }}
-          adUnitID="ca-app-pub-3940256099942544/3986624511"
-        />
+        {currentRoute && (
+          <TouchableOpacity
+            onPress={() => setCurrentRoute(null)}
+            activeOpacity={0.8}
+            style={{
+              backgroundColor: 'green',
+              width: 50,
+              alignItems: 'center',
+              height: 50,
+              justifyContent: 'center',
+              borderRadius: 100,
+            }}>
+            <Text
+              style={{
+                color: 'white',
+              }}>
+              Back
+            </Text>
+          </TouchableOpacity>
+        )}
       </View>
-    </>
+
+      {!currentRoute && (
+        <View
+          style={{
+            alignItems: 'center',
+          }}>
+          <View
+            style={{
+              alignItems: 'center',
+              marginBottom: 50,
+            }}>
+            <Image
+              source={require('./images.jpg')}
+              style={{
+                width: 120,
+                height: 120,
+                marginBottom: 30,
+                borderRadius: 100,
+                backgroundColor: '#f0f0f0',
+              }}
+            />
+
+            <Text
+              style={{
+                fontSize: 18,
+                letterSpacing: 1,
+                textAlign: 'center',
+              }}>
+              Admob Native Advanced Ads {'\n'} for React Native
+            </Text>
+          </View>
+
+          <TouchableOpacity
+            onPress={() => setCurrentRoute(routes[0])}
+            activeOpacity={0.8}
+            style={{
+              backgroundColor: 'orange',
+              width: '90%',
+              alignItems: 'center',
+              height: 50,
+              justifyContent: 'center',
+              borderRadius: 5,
+              marginBottom: 5,
+            }}>
+            <Text
+              style={{
+                color: 'white',
+              }}>
+              Simple Banner Ad
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => setCurrentRoute(routes[1])}
+            activeOpacity={0.8}
+            style={{
+              backgroundColor: 'orange',
+              width: '90%',
+              alignItems: 'center',
+              height: 50,
+              justifyContent: 'center',
+              borderRadius: 5,
+              marginBottom: 5,
+            }}>
+            <Text
+              style={{
+                color: 'white',
+              }}>
+              Ad with Image
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => setCurrentRoute(routes[2])}
+            activeOpacity={0.8}
+            style={{
+              backgroundColor: 'orange',
+              width: '90%',
+              alignItems: 'center',
+              height: 50,
+              justifyContent: 'center',
+              borderRadius: 5,
+              marginBottom: 5,
+            }}>
+            <Text
+              style={{
+                color: 'white',
+              }}>
+              Ad with Video
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => setCurrentRoute(routes[3])}
+            activeOpacity={0.8}
+            style={{
+              backgroundColor: 'orange',
+              width: '90%',
+              alignItems: 'center',
+              height: 50,
+              justifyContent: 'center',
+              borderRadius: 5,
+              marginBottom: 5,
+            }}>
+            <Text
+              style={{
+                color: 'white',
+              }}>
+              Multiple Ads in a List
+            </Text>
+          </TouchableOpacity>
+        </View>
+      )}
+
+      {currentRoute?.type === 'banner' && <AdView type="image" media={false} />}
+
+      {currentRoute?.type === 'image' && (
+        <View
+          style={{
+            height: 400,
+          }}>
+          <AdView type="image" media={true} />
+        </View>
+      )}
+
+      {currentRoute?.type === 'video' && (
+        <View
+          style={{
+            height: 400,
+          }}>
+          <AdView type="video" media={true} />
+        </View>
+      )}
+
+      {currentRoute?.type === 'list' && <List />}
+    </SafeAreaView>
   );
 };
 
